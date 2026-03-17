@@ -96,6 +96,75 @@ Keeping the tools updated:
 - **Update Repo:** `sudo apt update`
 - **Install Tool:** `sudo apt install <tool_name>`
 - **Install .deb file:** `sudo dpkg -i package.deb`
+---
+<a name="advanced-bash"></a>
+# 🚀 Part 2: Advanced Bash & Environment Mastery
+
+In this section, I document my progress through lessons 1 to 9, focusing on how to control the Linux environment and customize my workflow for efficiency.
+
+---
+
+## 📄 Page 1: The Bash Environment 🌐
+Understanding variables is essential for running scripts and tools in Kali Linux.
+
+* **Environment Variables**: I learned to use the `env` command to list all active variables. 
+* **The PATH Variable**: This is the most important variable. It tells Linux which folders to search for executable commands.
+* **Local vs. Exported Variables**: 
+    - A local variable: `name="yousef"` (Only stays in the current terminal).
+    - An exported variable: `export name="yousef"` (Stays active even if you open a sub-shell like typing `bash`).
+
+> 💡 **Tip:** Always use `echo $VARIABLE_NAME` to check the value.
+
+---
+
+## 📄 Page 2: Customizing the Environment 🛠️
+To work faster, we can change how the terminal behaves.
+
+* **Aliases (Shortcuts)**: I learned how to create "nicknames" for long commands.
+    - Example: `alias ll='ls -lah'` allows me to see hidden files with just two letters.
+* **The .bashrc File**: This is a hidden file in the home directory (`~/.bashrc`). 
+* **Permanent Changes**: I added my custom exports and aliases to the end of this file so they load automatically every time I open the terminal.
+* **Updating Changes**: Use `source ~/.bashrc` to apply changes immediately without restarting.
+
+---
+
+## 📄 Page 3: Command History Tricks 📜
+Speed is key during the OSCP exam. These tricks save a lot of time:
+
+* **Repeat Last Command**: Type `!!` to run the last command again (very useful with `sudo !!`).
+* **Search History**: Use `history` to see a list of past commands.
+* **Run by ID**: Use `!number` (e.g., `!42`) to run the command at that specific line in your history.
+* **Reverse Search**: Press `Ctrl + R` to search for a command you typed previously.
+
+---
+
+## 📄 Page 4: Redirection & Pipes 🔗
+This is how we "chain" commands together like a professional.
+
+* **Piping (`|`)**: Sending the output of one command to be the input of another.
+    - *Example*: `env | grep PATH` (Finds the PATH variable inside the environment list).
+* **Redirection (`>`)**: Saving command output into a file instead of showing it on the screen.
+    - `ls > files_list.txt` (Creates or overwrites a file).
+    - `ls >> files_list.txt` (Appends/Adds to the end of an existing file).
+
+---
+
+## 📄 Page 5: Process & Package Management 📦
+Keeping the system under control during a penetration test.
+
+* **Monitoring Processes**: Using `top` or `ps aux` to see what programs are using memory and CPU.
+* **Controlling Tasks**: 
+    - `Ctrl + C`: Stops a running command.
+    - `Ctrl + Z`: Pauses a command and puts it in the background.
+* **Managing Tools**: I practiced using `apt` and `dpkg` to install new security tools and keep Kali updated. 
+
+---
+
+### 📸 Lab Evidence
+*(Note: Upload your latest screenshots to the `Linux-Basics/images/` folder and link them here)*
+
+![Bash Environment and Aliases](images/Screenshot%20from%202026-03-17%2023-31-14.png)
+![Customizing .bashrc](images/Screenshot%20from%202026-03-17%2023-49-56.png)
 
 ---
 
@@ -108,4 +177,5 @@ This repo is **under active development**. Every time I complete a new lab in CC
 - [ ] Privilege Escalation (Linux/Windows)
 
 ---
+
 *Created with ❤️ by [Your Name/Username]*
